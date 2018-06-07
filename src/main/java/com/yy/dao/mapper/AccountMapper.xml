@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.yy.dao.AccountDao">
+    <select id="getAllAccountList" resultType="Account">
+        SELECT account,password,createTime FROM account
+    </select>
+
+    <select id="vilidateAcc" resultType="Account">
+        SELECT account,password FROM account WHERE 1=1
+        <if test="account != null and password != null">
+            AND account=#{account} AND password=#{password}
+        </if>
+
+    </select>
+</mapper>
