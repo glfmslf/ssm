@@ -25,6 +25,7 @@ public class AccountServiceImpl implements AccountService {
     }
 
 
+    @Override
     public Account vilidateAcc(Account acc) {
         return accountDao.vilidateAcc(acc);
     }
